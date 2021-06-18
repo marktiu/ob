@@ -33,10 +33,10 @@ function main() {
         result.push({"data": output})
     }
 
-    //fs.writeFile("test.json")
-
     console.log(result)
 }
+
+// helper sections
 
 function filterBonds(lstBonds,type){
 
