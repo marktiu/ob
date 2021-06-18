@@ -12,6 +12,11 @@ function main() {
     inputfile = process.argv[2]
     outputfile = process.argv[3]
 
+    if(!inputfile){
+        console.log("no input")
+        return
+    }
+
     var input = JSON.parse(fs.readFileSync(inputfile))
 
     corpBond = filterBonds(input.data,'corporate')
@@ -81,6 +86,11 @@ function findClosestBenchmark(bond,lstBonds){
 
 function calculateSpread(corpBond,govBond) {
     return Math.ceil((parseFloat(corpBond.yield) - parseFloat(govBond.yield)) * 100)
+}
+
+module.export = {
+    calculateSpread: calculateSpread,
+    findClosestBenchMark: findClosestBenchmark,
 }
 
 main()
