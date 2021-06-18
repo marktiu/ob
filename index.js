@@ -30,10 +30,11 @@ function main() {
         output.government_bond_id = benchmark.id
         output.spread_to_benchmark = benchmark.spread_to_benchmark + " bps"
 
-        result.push({"data": output})
+        result.push(output)
     }
 
-    console.log(result)
+    //output json to stdout
+    console.log({"data": result})
 }
 
 // helper sections
