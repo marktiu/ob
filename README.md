@@ -21,6 +21,10 @@ Execute the following in you shell:
 
 `$ sde-test-solution <argument 1> <argument 2> `
 
+Alternative way of running manually:
+
+`$ node index.js <argument 1>`
+
 The **first argument** will be the path to the input JSON file (has the input bond data), formatted as the example above. Your program must read the JSON file at this path and process it.
 
 The **second argument** will be the path where your program must write the output of your program, as a JSON file, formatted as the example above.
