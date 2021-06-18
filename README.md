@@ -1,4 +1,4 @@
-# Bond Calclator
+# Bond Calculator
 
 A command line utility to calculate the bond yields & spreads and return the output as JSON on stdout
 
