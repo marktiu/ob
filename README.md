@@ -1,6 +1,6 @@
 # Bond Calclator
 
-A command line utility to calculate the bond yields & spreads
+A command line utility to calculate the bond yields & spreads and return the output as JSON on stdout
 
 ## Pre-requisites
 
@@ -8,6 +8,8 @@ A command line utility to calculate the bond yields & spreads
 - node
 
 ## Installation
+
+clone the repository and run the following command to install all packages
 
 ```bash
 npm install
@@ -30,6 +32,21 @@ To test the application, run the following command below:
 
 ```bash
 npm test
+```
+
+If all tests passes, you should see an output like this:
+
+```bash
+> jest .
+
+ PASS  ./util.test.js
+ PASS  ./index.test.js
+
+Test Suites: 2 passed, 2 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        0.228 s, estimated 1 s
+Ran all test suites matching /./i.
 ```
 
 ## Docker
