@@ -1,4 +1,5 @@
 const input = require('./sample_input.json')
+const fs = require('fs')
 const utils = require('./utils.js')
 
 var corpBond = []
@@ -8,10 +9,8 @@ var result =[]
 function main() {
 
     // print process.argv
-    process.argv.forEach((val, index) => {
-        console.log(`${index}: ${val}`);
-    });
-
+    inputfile = process.argv[1]
+    outputfile = process.argv[2]
 
     corpBond = filterBonds(input.data,'corporate')
     govBond = filterBonds(input.data, 'government')
@@ -31,6 +30,12 @@ function main() {
 
         result.push({"data": output})
     }
+
+    fs.writeFile("test.json",JSON.stringify(result),function(err){
+        if(err){
+            console.log(err)
+        }
+    })
 
     console.log(result)
 }
