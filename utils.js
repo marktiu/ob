@@ -8,6 +8,6 @@ function bondValid(bond){
 }
 
 module.exports = {
-    sanitize: sanitize,
-    bondValid: bondValid
+    sanitize,
+    bondValid
 }
