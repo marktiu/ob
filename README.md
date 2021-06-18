@@ -1,14 +1,28 @@
-# SDE Online Assessment
+# Bond Calclator
 
-The purpose of this test is to evaluate your:
+A command line utility to calculate the bond yields & spreads
 
-- development skills in a production environment
-- ability to provide a solution given a specification using best practices
-- design thinking
-- coding style
-- ability to containerize a solution using Docker
+## Pre-requisites
 
-You may use any language you are comfortable with, as long as it is quick and simple to execute in Docker. If you're unfamiliar with Docker, just **be sure that your submission can be run within the command line**.
+npm
+node
+
+## Installation
+
+```bash
+npm install
+```
+
+## Usage
+
+Execute the following in you shell:
+
+`$ sde-test-solution input_file.json output_file.json `
+
+The **first argument** will be the path to the input JSON file (has the input bond data), formatted as the example above. Your program must read the JSON file at this path and process it.
+
+The **second argument** will be the path where your program must write the output of your program, as a JSON file, formatted as the example above.
+
 
 ## Problem description
 
@@ -81,57 +95,23 @@ The best benchmark for bond `c1` is `g1`, since the absolute difference in their
 
 The bond `c2` is not included in the output because it is missing a property, `yield`. If *any* properties are missing from a bond object, *do not include it in the calculation and output*. You may assume you will always have at least one valid government bond and at least one valid corporate bond, for all inputs.
 
-## Command-line interface
-
-To make this challenge easier to work on, and easier for us to evaluate, you must implement a specific command-line interface for your program, *regardless of which language you use*. For example, let the name of your executable be `sde-test-solution`, then your program should accept and use the following arguments only.
-
-`$ sde-test-solution input_file.json output_file.json `
-
-The **first argument** will be the path to the input JSON file (has the input bond data), formatted as the example above. Your program must read the JSON file at this path and process it.
-
-The **second argument** will be the path where your program must write the output of your program, as a JSON file, formatted as the example above.
-
 You may assume that both arguments will always be provided during our testing, and that the paths will always be valid.
 
-## Input file format
-
-See `sample_input.json`, or example above. You may assume that all properties or fields will be present and valid.
-
-## Output file format
-
-See `sample_output.json`, or example above. You must follow the file structure exactly, and include all fields for each output object shown in the example.
 
 ## Further requirements
 
 ### Testing
 
-Code in production should be tested, as this guarantees expected behaviour and functionality, as well as  making it safer to modify implementations while knowing behaviour remains the same. Do your best to **write some insightful automated tests** for your command-line program.
+To test the application, run the following command below:
 
-### Documentation
-
-**Replace this README file with your own**. Write documentation on your submission such that someone can read it and immediately understand CLI arguments, inputs and outputs, behaviours, and reasoning behind design decisions that went into your solution, and any trade-offs. Discuss the run time complexity of your main calculation.
+```bash
+npm test
+```
 
 ### Docker
 
-To help make assessment easier, you should **create and fill out a working** `Dockerfile` in the directory of your solution, that will handle the building your final executable and its dependencies.
+To run the docker file, execute the command below:
 
-Your final executable should be setup as an entrypoint so that we can automatically pass in the paths for your program to process input from and write output to.
-
-You must set your `WORKDIR` to be `/submission`, make sure to copy your files there, in your container. This is important because we will be setting up volumes on our end, and would like to reason about your file system.
-
-**Note:** If you cannot run/test your submission in Docker locally, please include a Dockerfile at least. If you do not know Docker, please list dependencies involved to develop and run your submission in your documentation.
-
-## Evaluation
-
-Upon receiving your submission, we will evaluate:
-
-- **Functionality**: does the Docker image build and execute? Does the program pass our automated test cases?
-- **Code style**: is the code organized well and easy to understand? Are there any smells or severe formatting issues? Is it efficient?
-- **Testing**: are there any automated tests written? Do they provide sufficient coverage?
-- **Documentation**: is a new README present? Is it clearly expressed and well written? Does it touch on all topics mentioned?
-
-## Submission
-
-Clone this repository and make commit the work to your own repo to share with us. If you decide to make the repo private, add @overbondeng as a collaborator, so that we can clone and view your solution.
-
-Alternatively, email us a zip file containing your entire solution.
+```bash
+docker run .
+```
