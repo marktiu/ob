@@ -4,8 +4,8 @@ A command line utility to calculate the bond yields & spreads
 
 ## Pre-requisites
 
-npm
-node
+- npm
+- node
 
 ## Installation
 
@@ -17,11 +17,28 @@ npm install
 
 Execute the following in you shell:
 
-`$ sde-test-solution input_file.json output_file.json `
+`$ sde-test-solution <argument 1> <argument 2> `
 
 The **first argument** will be the path to the input JSON file (has the input bond data), formatted as the example above. Your program must read the JSON file at this path and process it.
 
 The **second argument** will be the path where your program must write the output of your program, as a JSON file, formatted as the example above.
+
+
+## Testing
+
+To test the application, run the following command below:
+
+```bash
+npm test
+```
+
+## Docker
+
+To run the docker file, execute the command below:
+
+```bash
+docker run .
+```
 
 
 ## Problem description
@@ -94,24 +111,3 @@ Each output object in the list represents a pairing of one corporate bond to its
 The best benchmark for bond `c1` is `g1`, since the absolute difference in their terms (|10.3 - 9.4|) is only 0.9, but comparing `c1`and `g2` gets you 1.7. The spread is calculated as simply the corporate yield - government yield, you would obtain 5.30 - 3.70 = 1.60, which you must represent in basis points as "160 bps".
 
 The bond `c2` is not included in the output because it is missing a property, `yield`. If *any* properties are missing from a bond object, *do not include it in the calculation and output*. You may assume you will always have at least one valid government bond and at least one valid corporate bond, for all inputs.
-
-You may assume that both arguments will always be provided during our testing, and that the paths will always be valid.
-
-
-## Further requirements
-
-### Testing
-
-To test the application, run the following command below:
-
-```bash
-npm test
-```
-
-### Docker
-
-To run the docker file, execute the command below:
-
-```bash
-docker run .
-```
