@@ -1,0 +1,27 @@
+{
+  "name": "overbondtest",
+  "version": "1.0.0",
+  "description": "The purpose of this test is to evaluate your:",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/overbond/sde-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/overbond/sde-test/issues"
+  },
+  "homepage": "https://github.com/overbond/sde-test#readme",
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "jest": "^27.0.4"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
