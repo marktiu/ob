@@ -51,12 +51,33 @@ Ran all test suites matching /./i.
 
 ## Docker
 
+Build your docker image first
+
+```bash
+docker build -t <image name> .
+```
+
 To run the docker file, execute the command below:
 
 ```bash
-docker run .
+docker run <image name> <json input file>
 ```
 
+You should get an output similar to this:
+
+```bash
+
+/home/user$ docker run ob sample_input.json
+{
+  data: [
+    {
+      corporate_bond_id: 'c1',
+      government_bond_id: 'g1',
+      spread_to_benchmark: '160 bps'
+    }
+  ]
+}
+```
 
 ## Problem description
 
